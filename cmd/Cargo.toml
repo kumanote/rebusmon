@@ -1,0 +1,30 @@
+[package]
+name = "rebusmon"
+version = "0.1.0"
+authors = ["Hiroki Tanaka <support@kumano-te.com>"]
+license = "MIT"
+edition = "2021"
+description = "Cosmos terutiru daemon node monitoring tool"
+repository = "https://github.com/kumanote/rebusmon"
+readme = "README.md"
+keywords = ["rebusd", "monitoring", "operation"]
+
+[dependencies]
+anyhow = { version = "1.0", features = ["backtrace"] }
+thiserror = "1.0"
+futures = "0.3"
+tokio = { version = "1.15.0", features = ["full"] }
+structopt = "0.3.26"
+
+logger = { version = "0.1.0", git = "https://github.com/kumanote/logger-rs", branch = "main", features = ["airbrake"] }
+
+config = { path = "../config" }
+channel = { path = "../channel" }
+checker = { path = "../checker" }
+rebuscli = { path = "../rebuscli" }
+crypto = { path = "../crypto" }
+
+[dev-dependencies]
+
+[features]
+default = []
